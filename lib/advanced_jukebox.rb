@@ -42,7 +42,14 @@ def play(my_songs)
   #if it isn't, tell them their choice is invalid
   #if it is, play the song using the system 'open <file path>' syntax
   #get the file path of the song by looking it up in the my_songs hash
-
+  puts "Please enter a song name:"
+  song = gets.chomp
+  keys = my_songs.keys
+  if keys.include?(song)
+    open my_songs[song]
+  else
+    puts "Invalid input, please try again"
+  end
 end
 
 def exit_jukebox
